@@ -1,0 +1,1521 @@
+@import "tailwindcss";
+
+@import '@radix-ui/colors/sage-dark.css' layer(base);
+@import '@radix-ui/colors/olive.css' layer(base);
+@import '@radix-ui/colors/olive-dark.css' layer(base);
+@import '@radix-ui/colors/sand.css' layer(base);
+@import '@radix-ui/colors/sand-dark.css' layer(base);
+@import '@radix-ui/colors/red.css' layer(base);
+@import '@radix-ui/colors/red-dark.css' layer(base);
+@import '@radix-ui/colors/ruby.css' layer(base);
+@import '@radix-ui/colors/ruby-dark.css' layer(base);
+@import '@radix-ui/colors/crimson.css' layer(base);
+@import '@radix-ui/colors/crimson-dark.css' layer(base);
+@import '@radix-ui/colors/pink.css' layer(base);
+@import '@radix-ui/colors/pink-dark.css' layer(base);
+@import '@radix-ui/colors/plum.css' layer(base);
+@import '@radix-ui/colors/plum-dark.css' layer(base);
+@import '@radix-ui/colors/purple.css' layer(base);
+@import '@radix-ui/colors/purple-dark.css' layer(base);
+@import '@radix-ui/colors/violet.css' layer(base);
+@import '@radix-ui/colors/violet-dark.css' layer(base);
+@import '@radix-ui/colors/iris.css' layer(base);
+@import '@radix-ui/colors/iris-dark.css' layer(base);
+@import '@radix-ui/colors/indigo.css' layer(base);
+@import '@radix-ui/colors/indigo-dark.css' layer(base);
+@import '@radix-ui/colors/blue.css' layer(base);
+@import '@radix-ui/colors/blue-dark.css' layer(base);
+@import '@radix-ui/colors/cyan.css' layer(base);
+@import '@radix-ui/colors/cyan-dark.css' layer(base);
+@import '@radix-ui/colors/teal.css' layer(base);
+@import '@radix-ui/colors/teal-dark.css' layer(base);
+@import '@radix-ui/colors/jade.css' layer(base);
+@import '@radix-ui/colors/jade-dark.css' layer(base);
+@import '@radix-ui/colors/green.css' layer(base);
+@import '@radix-ui/colors/green-dark.css' layer(base);
+@import '@radix-ui/colors/grass.css' layer(base);
+@import '@radix-ui/colors/grass-dark.css' layer(base);
+@import '@radix-ui/colors/bronze.css' layer(base);
+@import '@radix-ui/colors/bronze-dark.css' layer(base);
+@import '@radix-ui/colors/gold.css' layer(base);
+@import '@radix-ui/colors/gold-dark.css' layer(base);
+@import '@radix-ui/colors/brown.css' layer(base);
+@import '@radix-ui/colors/brown-dark.css' layer(base);
+@import '@radix-ui/colors/orange.css' layer(base);
+@import '@radix-ui/colors/orange-dark.css' layer(base);
+@import '@radix-ui/colors/amber.css' layer(base);
+@import '@radix-ui/colors/amber-dark.css' layer(base);
+@import '@radix-ui/colors/yellow.css' layer(base);
+@import '@radix-ui/colors/yellow-dark.css' layer(base);
+@import '@radix-ui/colors/lime.css' layer(base);
+@import '@radix-ui/colors/lime-dark.css' layer(base);
+@import '@radix-ui/colors/mint.css' layer(base);
+@import '@radix-ui/colors/mint-dark.css' layer(base);
+@import '@radix-ui/colors/sky.css' layer(base);
+@import '@radix-ui/colors/sky-dark.css' layer(base);
+@import '@radix-ui/colors/tomato.css' layer(base);
+@import '@radix-ui/colors/tomato-dark.css' layer(base);
+@import '@radix-ui/colors/gray.css' layer(base);
+@import '@radix-ui/colors/gray-dark.css' layer(base);
+@import '@radix-ui/colors/mauve.css' layer(base);
+@import '@radix-ui/colors/mauve-dark.css' layer(base);
+@import '@radix-ui/colors/mauve-alpha.css' layer(base);
+@import '@radix-ui/colors/mauve-dark-alpha.css' layer(base);
+@import '@radix-ui/colors/slate.css' layer(base);
+@import '@radix-ui/colors/slate-dark.css' layer(base);
+@import '@radix-ui/colors/slate-alpha.css' layer(base);
+@import '@radix-ui/colors/slate-dark-alpha.css' layer(base);
+
+@import 'tailwindcss/theme' layer(theme);
+
+@import 'tailwindcss/preflight' layer(base);
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer base {
+  :root,
+  #spark-app {
+    --tomato-contrast: #fff;
+    --red-contrast: #fff;
+    --ruby-contrast: #fff;
+    --crimson-contrast: #fff;
+    --pink-contrast: #fff;
+    --plum-contrast: #fff;
+    --purple-contrast: #fff;
+    --violet-contrast: #fff;
+    --iris-contrast: #fff;
+    --indigo-contrast: #fff;
+    --blue-contrast: #fff;
+    --cyan-contrast: #fff;
+    --teal-contrast: #fff;
+    --jade-contrast: #fff;
+    --green-contrast: #fff;
+    --grass-contrast: #fff;
+    --bronze-contrast: #fff;
+    --gold-contrast: #fff;
+    --brown-contrast: #fff;
+    --orange-contrast: #fff;
+    --amber-contrast: #000;
+    --yellow-contrast: #000;
+    --lime-contrast: #000;
+    --mint-contrast: #000;
+    --sky-contrast: #000;
+    --gray-contrast: #fff;
+    --mauve-contrast: #fff;
+    --slate-contrast: #fff;
+    --sage-contrast: #fff;
+    --olive-contrast: #fff;
+    --sand-contrast: #fff;
+
+    /**
+   * Spacing scale
+   *
+   * These variables define a spacing scale based on Tailwind's default.
+   * We've introduced a --size-scale variable as a multiplier.
+   * By adjusting this single value, we can proportionally
+   * scale all spacing throughout the entire application.
+   *
+   * https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale
+   */
+    --size-scale: 1;
+    --size-0: 0px;
+    --size-px: 1px;
+    --size-0-5: calc(0.125rem * var(--size-scale));
+    --size-1: calc(0.25rem * var(--size-scale));
+    --size-1-5: calc(0.375rem * var(--size-scale));
+    --size-2: calc(0.5rem * var(--size-scale));
+    --size-2-5: calc(0.625rem * var(--size-scale));
+    --size-3: calc(0.75rem * var(--size-scale));
+    --size-3-5: calc(0.875rem * var(--size-scale));
+    --size-4: calc(1rem * var(--size-scale));
+    --size-5: calc(1.25rem * var(--size-scale));
+    --size-6: calc(1.5rem * var(--size-scale));
+    --size-7: calc(1.75rem * var(--size-scale));
+    --size-8: calc(2rem * var(--size-scale));
+    --size-9: calc(2.25rem * var(--size-scale));
+    --size-10: calc(2.5rem * var(--size-scale));
+    --size-11: calc(2.75rem * var(--size-scale));
+    --size-12: calc(3rem * var(--size-scale));
+    --size-14: calc(3.5rem * var(--size-scale));
+    --size-16: calc(4rem * var(--size-scale));
+    --size-20: calc(5rem * var(--size-scale));
+    --size-24: calc(6rem * var(--size-scale));
+    --size-28: calc(7rem * var(--size-scale));
+    --size-32: calc(8rem * var(--size-scale));
+    --size-36: calc(9rem * var(--size-scale));
+    --size-40: calc(10rem * var(--size-scale));
+    --size-44: calc(11rem * var(--size-scale));
+    --size-48: calc(12rem * var(--size-scale));
+    --size-52: calc(13rem * var(--size-scale));
+    --size-56: calc(14rem * var(--size-scale));
+    --size-60: calc(15rem * var(--size-scale));
+    --size-64: calc(16rem * var(--size-scale));
+    --size-72: calc(18rem * var(--size-scale));
+    --size-80: calc(20rem * var(--size-scale));
+    --size-96: calc(24rem * var(--size-scale));
+
+    /* Border radii */
+    --radius-factor: 1;
+    --radius-sm: calc(2px * var(--radius-factor) * var(--size-scale));
+    --radius-md: calc(6px * var(--radius-factor) * var(--size-scale));
+    --radius-lg: calc(8px * var(--radius-factor) * var(--size-scale));
+    --radius-xl: calc(12px * var(--radius-factor) * var(--size-scale));
+    --radius-2xl: calc(16px * var(--radius-factor) * var(--size-scale));
+    --radius-full: 9999px;
+
+    /* Neutral colors */
+    --color-neutral-1: var(--slate-1);
+    --color-neutral-2: var(--slate-2);
+    --color-neutral-3: var(--slate-3);
+    --color-neutral-4: var(--slate-4);
+    --color-neutral-5: var(--slate-5);
+    --color-neutral-6: var(--slate-6);
+    --color-neutral-7: var(--slate-7);
+    --color-neutral-8: var(--slate-8);
+    --color-neutral-9: var(--slate-9);
+    --color-neutral-10: var(--slate-10);
+    --color-neutral-11: var(--slate-11);
+    --color-neutral-12: var(--slate-12);
+    --color-neutral-a1: var(--slate-a1);
+    --color-neutral-a2: var(--slate-a2);
+    --color-neutral-a3: var(--slate-a3);
+    --color-neutral-a4: var(--slate-a4);
+    --color-neutral-a5: var(--slate-a5);
+    --color-neutral-a6: var(--slate-a6);
+    --color-neutral-a7: var(--slate-a7);
+    --color-neutral-a8: var(--slate-a8);
+    --color-neutral-a9: var(--slate-a9);
+    --color-neutral-a10: var(--slate-a10);
+    --color-neutral-a11: var(--slate-a11);
+    --color-neutral-a12: var(--slate-a12);
+    --color-neutral-contrast: var(--slate-contrast);
+
+    /* Accent colors */
+    --color-accent-1: var(--blue-1);
+    --color-accent-2: var(--blue-2);
+    --color-accent-3: var(--blue-3);
+    --color-accent-4: var(--blue-4);
+    --color-accent-5: var(--blue-5);
+    --color-accent-6: var(--blue-6);
+    --color-accent-7: var(--blue-7);
+    --color-accent-8: var(--blue-8);
+    --color-accent-9: var(--blue-9);
+    --color-accent-10: var(--blue-10);
+    --color-accent-11: var(--blue-11);
+    --color-accent-12: var(--blue-12);
+    --color-accent-contrast: var(--blue-contrast);
+
+    /* Secondary accent colors */
+    --color-accent-secondary-1: var(--violet-1);
+    --color-accent-secondary-2: var(--violet-2);
+    --color-accent-secondary-3: var(--violet-3);
+    --color-accent-secondary-4: var(--violet-4);
+    --color-accent-secondary-5: var(--violet-5);
+    --color-accent-secondary-6: var(--violet-6);
+    --color-accent-secondary-7: var(--violet-7);
+    --color-accent-secondary-8: var(--violet-8);
+    --color-accent-secondary-9: var(--violet-9);
+    --color-accent-secondary-10: var(--violet-10);
+    --color-accent-secondary-11: var(--violet-11);
+    --color-accent-secondary-12: var(--violet-12);
+    --color-accent-secondary-contrast: var(--violet-contrast);
+
+    /* Foreground colors */
+    --color-fg: var(--color-neutral-12);
+    --color-fg-secondary: var(--color-neutral-a11);
+
+    /* Background colors */
+    --color-bg: #ffffff;
+    --color-bg-inset: var(--color-neutral-2);
+    --color-bg-overlay: #ffffff;
+
+    /* Focus ring */
+    --color-focus-ring: var(--color-accent-9);
+
+    /* Fonts */
+    --font-sans-serif: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      "Liberation Mono", "Courier New", monospace;
+    --font-family: var(--font-sans-serif);
+  }
+
+  :root.dark-theme,
+  #spark-app.dark-theme {
+    --color-bg: var(--color-neutral-1);
+    --color-bg-inset: #000000;
+    --color-bg-overlay: var(--color-neutral-3);
+  }
+
+  :root.theme-rose,
+  #spark-app.theme-rose {
+    --color-neutral-1: var(--mauve-1);
+    --color-neutral-2: var(--mauve-2);
+    --color-neutral-3: var(--mauve-3);
+    --color-neutral-4: var(--mauve-4);
+    --color-neutral-5: var(--mauve-5);
+    --color-neutral-6: var(--mauve-6);
+    --color-neutral-7: var(--mauve-7);
+    --color-neutral-8: var(--mauve-8);
+    --color-neutral-9: var(--mauve-9);
+    --color-neutral-10: var(--mauve-10);
+    --color-neutral-11: var(--mauve-11);
+    --color-neutral-12: var(--mauve-12);
+    --color-neutral-contrast: var(--mauve-contrast);
+
+    --color-neutral-a1: var(--mauve-a1);
+    --color-neutral-a2: var(--mauve-a2);
+    --color-neutral-a3: var(--mauve-a3);
+    --color-neutral-a4: var(--mauve-a4);
+    --color-neutral-a5: var(--mauve-a5);
+    --color-neutral-a6: var(--mauve-a6);
+    --color-neutral-a7: var(--mauve-a7);
+    --color-neutral-a8: var(--mauve-a8);
+    --color-neutral-a9: var(--mauve-a9);
+    --color-neutral-a10: var(--mauve-a10);
+    --color-neutral-a11: var(--mauve-a11);
+    --color-neutral-a12: var(--mauve-a12);
+
+    --color-accent-1: var(--crimson-1);
+    --color-accent-2: var(--crimson-2);
+    --color-accent-3: var(--crimson-3);
+    --color-accent-4: var(--crimson-4);
+    --color-accent-5: var(--crimson-5);
+    --color-accent-6: var(--crimson-6);
+    --color-accent-7: var(--crimson-7);
+    --color-accent-8: var(--crimson-8);
+    --color-accent-9: var(--crimson-9);
+    --color-accent-10: var(--crimson-10);
+    --color-accent-11: var(--crimson-11);
+    --color-accent-12: var(--crimson-12);
+    --color-accent-contrast: var(--crimson-contrast);
+
+    --color-accent-secondary-1: var(--pink-1);
+    --color-accent-secondary-2: var(--pink-2);
+    --color-accent-secondary-3: var(--pink-3);
+    --color-accent-secondary-4: var(--pink-4);
+    --color-accent-secondary-5: var(--pink-5);
+    --color-accent-secondary-6: var(--pink-6);
+    --color-accent-secondary-7: var(--pink-7);
+    --color-accent-secondary-8: var(--pink-8);
+    --color-accent-secondary-9: var(--pink-9);
+    --color-accent-secondary-10: var(--pink-10);
+    --color-accent-secondary-11: var(--pink-11);
+    --color-accent-secondary-12: var(--pink-12);
+    --color-accent-secondary-contrast: var(--pink-contrast);
+
+    --color-fg: var(--color-neutral-12);
+    --color-fg-secondary: var(--color-neutral-a11);
+    --color-focus-ring: var(--color-accent-9);
+  }
+
+  :root.theme-midnight,
+  #spark-app.theme-midnight {
+    --color-accent-1: var(--indigo-1);
+    --color-accent-2: var(--indigo-2);
+    --color-accent-3: var(--indigo-3);
+    --color-accent-4: var(--indigo-4);
+    --color-accent-5: var(--indigo-5);
+    --color-accent-6: var(--indigo-6);
+    --color-accent-7: var(--indigo-7);
+    --color-accent-8: var(--indigo-8);
+    --color-accent-9: var(--indigo-9);
+    --color-accent-10: var(--indigo-10);
+    --color-accent-11: var(--indigo-11);
+    --color-accent-12: var(--indigo-12);
+    --color-accent-contrast: var(--indigo-contrast);
+
+    --color-accent-secondary-1: var(--sky-1);
+    --color-accent-secondary-2: var(--sky-2);
+    --color-accent-secondary-3: var(--sky-3);
+    --color-accent-secondary-4: var(--sky-4);
+    --color-accent-secondary-5: var(--sky-5);
+    --color-accent-secondary-6: var(--sky-6);
+    --color-accent-secondary-7: var(--sky-7);
+    --color-accent-secondary-8: var(--sky-8);
+    --color-accent-secondary-9: var(--sky-9);
+    --color-accent-secondary-10: var(--sky-10);
+    --color-accent-secondary-11: var(--sky-11);
+    --color-accent-secondary-12: var(--sky-12);
+    --color-accent-secondary-contrast: var(--sky-contrast);
+
+    --color-fg: var(--color-neutral-12);
+    --color-fg-secondary: var(--color-neutral-a11);
+    --color-bg-inset: var(--slate-1);
+    --color-bg-overlay: var(--slate-2);
+    --color-focus-ring: var(--color-accent-9);
+  }
+
+  :root.theme-sweet-blue,
+  #spark-app.theme-sweet-blue {
+    --color-neutral-1: var(--sky-1);
+    --color-neutral-2: var(--sky-2);
+    --color-neutral-3: var(--sky-3);
+    --color-neutral-4: var(--sky-4);
+    --color-neutral-5: var(--sky-5);
+    --color-neutral-6: var(--sky-6);
+    --color-neutral-7: var(--sky-7);
+    --color-neutral-8: var(--sky-8);
+    --color-neutral-9: var(--sky-9);
+    --color-neutral-10: var(--sky-10);
+    --color-neutral-11: var(--sky-11);
+    --color-neutral-12: var(--slate-12);
+    --color-neutral-contrast: var(--sky-contrast);
+
+    --color-neutral-a1: var(--sky-a1);
+    --color-neutral-a2: var(--sky-a2);
+    --color-neutral-a3: var(--sky-a3);
+    --color-neutral-a4: var(--sky-a4);
+    --color-neutral-a5: var(--sky-a5);
+    --color-neutral-a6: var(--sky-a6);
+    --color-neutral-a7: var(--sky-a7);
+    --color-neutral-a8: var(--sky-a8);
+    --color-neutral-a9: var(--sky-a9);
+    --color-neutral-a10: var(--sky-a10);
+    --color-neutral-a11: var(--sky-a11);
+    --color-neutral-a12: var(--slate-a12);
+
+    --color-accent-1: var(--blue-1);
+    --color-accent-2: var(--blue-2);
+    --color-accent-3: var(--blue-3);
+    --color-accent-4: var(--blue-4);
+    --color-accent-5: var(--blue-5);
+    --color-accent-6: var(--blue-6);
+    --color-accent-7: var(--blue-7);
+    --color-accent-8: var(--blue-8);
+    --color-accent-9: var(--blue-9);
+    --color-accent-10: var(--blue-10);
+    --color-accent-11: var(--blue-11);
+    --color-accent-12: var(--blue-12);
+    --color-accent-contrast: var(--blue-contrast);
+
+    --color-accent-secondary-1: var(--cyan-1);
+    --color-accent-secondary-2: var(--cyan-2);
+    --color-accent-secondary-3: var(--cyan-3);
+    --color-accent-secondary-4: var(--cyan-4);
+    --color-accent-secondary-5: var(--cyan-5);
+    --color-accent-secondary-6: var(--cyan-6);
+    --color-accent-secondary-7: var(--cyan-7);
+    --color-accent-secondary-8: var(--cyan-8);
+    --color-accent-secondary-9: var(--cyan-9);
+    --color-accent-secondary-10: var(--cyan-10);
+    --color-accent-secondary-11: var(--cyan-11);
+    --color-accent-secondary-12: var(--cyan-12);
+    --color-accent-secondary-contrast: var(--cyan-contrast);
+
+    --color-fg: var(--slate-12);
+    --color-fg-secondary: var(--slate-a11);
+    --color-bg-inset: var(--sky-1);
+    --color-bg-overlay: var(--sky-2);
+    --color-focus-ring: var(--color-accent-9);
+  }
+
+  /*
+    Theme: Scruffy Blue 3D
+    A vibrant royal-blue dark theme with hot-pink accents,
+    translucent blue-tinted cards, and bold 3D depth.
+    Inspired by the Scruffy Butts brand palette.
+  */
+  :root.theme-scruffy-blue,
+  #spark-app.theme-scruffy-blue {
+    --color-neutral-1: var(--slate-1);
+    --color-neutral-2: var(--slate-2);
+    --color-neutral-3: var(--slate-3);
+    --color-neutral-4: var(--slate-4);
+    --color-neutral-5: var(--slate-5);
+    --color-neutral-6: var(--slate-6);
+    --color-neutral-7: var(--slate-7);
+    --color-neutral-8: var(--slate-8);
+    --color-neutral-9: var(--slate-9);
+    --color-neutral-10: var(--slate-10);
+    --color-neutral-11: var(--slate-11);
+    --color-neutral-12: var(--slate-12);
+    --color-neutral-contrast: var(--slate-contrast);
+
+    --color-neutral-a1: var(--slate-a1);
+    --color-neutral-a2: var(--slate-a2);
+    --color-neutral-a3: var(--slate-a3);
+    --color-neutral-a4: var(--slate-a4);
+    --color-neutral-a5: var(--slate-a5);
+    --color-neutral-a6: var(--slate-a6);
+    --color-neutral-a7: var(--slate-a7);
+    --color-neutral-a8: var(--slate-a8);
+    --color-neutral-a9: var(--slate-a9);
+    --color-neutral-a10: var(--slate-a10);
+    --color-neutral-a11: var(--slate-a11);
+    --color-neutral-a12: var(--slate-a12);
+
+    --color-accent-1: var(--blue-1);
+    --color-accent-2: var(--blue-2);
+    --color-accent-3: var(--blue-3);
+    --color-accent-4: var(--blue-4);
+    --color-accent-5: var(--blue-5);
+    --color-accent-6: var(--blue-6);
+    --color-accent-7: var(--blue-7);
+    --color-accent-8: var(--blue-8);
+    --color-accent-9: var(--blue-9);
+    --color-accent-10: var(--blue-10);
+    --color-accent-11: var(--blue-11);
+    --color-accent-12: var(--blue-12);
+    --color-accent-contrast: var(--blue-contrast);
+
+    --color-accent-secondary-1: var(--pink-1);
+    --color-accent-secondary-2: var(--pink-2);
+    --color-accent-secondary-3: var(--pink-3);
+    --color-accent-secondary-4: var(--pink-4);
+    --color-accent-secondary-5: var(--pink-5);
+    --color-accent-secondary-6: var(--pink-6);
+    --color-accent-secondary-7: var(--pink-7);
+    --color-accent-secondary-8: var(--pink-8);
+    --color-accent-secondary-9: var(--pink-9);
+    --color-accent-secondary-10: var(--pink-10);
+    --color-accent-secondary-11: var(--pink-11);
+    --color-accent-secondary-12: var(--pink-12);
+    --color-accent-secondary-contrast: var(--pink-contrast);
+
+    --color-fg: var(--color-neutral-12);
+    --color-fg-secondary: var(--color-neutral-a11);
+    --color-bg-inset: var(--slate-1);
+    --color-bg-overlay: var(--slate-3);
+    --color-focus-ring: var(--color-accent-9);
+  }
+
+  /*
+    Theme: Steel Noir Industrial
+    Dark gunmetal surfaces with subtle cyan highlights and brushed-metal depth.
+  */
+  :root.theme-steel-noir,
+  #spark-app.theme-steel-noir {
+    --color-neutral-1: #16191f;
+    --color-neutral-2: #1b1f26;
+    --color-neutral-3: #222731;
+    --color-neutral-4: #2a303b;
+    --color-neutral-5: #323a46;
+    --color-neutral-6: #3a4350;
+    --color-neutral-7: #46505e;
+    --color-neutral-8: #566172;
+    --color-neutral-9: #687487;
+    --color-neutral-10: #788599;
+    --color-neutral-11: #a3afc1;
+    --color-neutral-12: #e6edf6;
+
+    --color-accent-1: #1d1409;
+    --color-accent-2: #271a0b;
+    --color-accent-3: #3a250d;
+    --color-accent-4: #4e3211;
+    --color-accent-5: #614016;
+    --color-accent-6: #77501d;
+    --color-accent-7: #936528;
+    --color-accent-8: #b17a30;
+    --color-accent-9: #d49635;
+    --color-accent-10: #e0ac56;
+    --color-accent-11: #f1c98e;
+    --color-accent-12: #fff0d9;
+
+    --color-accent-secondary-1: #1e1310;
+    --color-accent-secondary-2: #291913;
+    --color-accent-secondary-3: #3b241c;
+    --color-accent-secondary-4: #4d3025;
+    --color-accent-secondary-5: #613c2f;
+    --color-accent-secondary-6: #784a3a;
+    --color-accent-secondary-7: #955c48;
+    --color-accent-secondary-8: #b56e55;
+    --color-accent-secondary-9: #d98866;
+    --color-accent-secondary-10: #e7a081;
+    --color-accent-secondary-11: #f5c2ab;
+    --color-accent-secondary-12: #ffebe0;
+
+    --color-fg: #edf3fb;
+    --color-fg-secondary: rgba(189, 202, 220, 0.8);
+    --color-bg: #0f1319;
+    --color-bg-inset: #080b10;
+    --color-bg-overlay: #1a212b;
+    --color-focus-ring: #d49635;
+  }
+
+  /*
+    Theme: Blue Steel Industrial
+    Identical to Steel Noir except active/pressed states use blue accents.
+  */
+  :root.theme-blue-steel,
+  #spark-app.theme-blue-steel {
+    --color-neutral-1: #16191f;
+    --color-neutral-2: #1b1f26;
+    --color-neutral-3: #222731;
+    --color-neutral-4: #2a303b;
+    --color-neutral-5: #323a46;
+    --color-neutral-6: #3a4350;
+    --color-neutral-7: #46505e;
+    --color-neutral-8: #566172;
+    --color-neutral-9: #687487;
+    --color-neutral-10: #788599;
+    --color-neutral-11: #a3afc1;
+    --color-neutral-12: #e6edf6;
+
+    --color-accent-1: #1d1409;
+    --color-accent-2: #271a0b;
+    --color-accent-3: #3a250d;
+    --color-accent-4: #4e3211;
+    --color-accent-5: #614016;
+    --color-accent-6: #77501d;
+    --color-accent-7: #936528;
+    --color-accent-8: #b17a30;
+    --color-accent-9: #d49635;
+    --color-accent-10: #e0ac56;
+    --color-accent-11: #f1c98e;
+    --color-accent-12: #fff0d9;
+
+    --color-accent-secondary-1: #1e1310;
+    --color-accent-secondary-2: #291913;
+    --color-accent-secondary-3: #3b241c;
+    --color-accent-secondary-4: #4d3025;
+    --color-accent-secondary-5: #613c2f;
+    --color-accent-secondary-6: #784a3a;
+    --color-accent-secondary-7: #955c48;
+    --color-accent-secondary-8: #b56e55;
+    --color-accent-secondary-9: #d98866;
+    --color-accent-secondary-10: #e7a081;
+    --color-accent-secondary-11: #f5c2ab;
+    --color-accent-secondary-12: #ffebe0;
+
+    --color-fg: #edf3fb;
+    --color-fg-secondary: rgba(189, 202, 220, 0.8);
+    --color-bg: #0f1319;
+    --color-bg-inset: #080b10;
+    --color-bg-overlay: #1a212b;
+    --color-focus-ring: #d49635;
+  }
+
+  /* 3D depth surfaces for Scruffy Blue theme */
+  :root.theme-scruffy-blue [data-slot="card"],
+  #spark-app.theme-scruffy-blue [data-slot="card"],
+  :root.theme-scruffy-blue .rounded-lg.border,
+  #spark-app.theme-scruffy-blue .rounded-lg.border {
+    box-shadow:
+      0 4px 16px oklch(0.12 0.06 250 / 50%),
+      0 1px 3px oklch(0.12 0.06 250 / 30%),
+      inset 0 1px 0 oklch(1 0 0 / 8%);
+    transform: translateZ(0);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  :root.theme-scruffy-blue [data-slot="card"]:hover,
+  #spark-app.theme-scruffy-blue [data-slot="card"]:hover {
+    transform: translateY(-2px) translateZ(0);
+    box-shadow:
+      0 8px 28px oklch(0.12 0.06 250 / 55%),
+      0 2px 6px oklch(0.12 0.06 250 / 35%),
+      inset 0 1px 0 oklch(1 0 0 / 10%);
+  }
+
+  /* 3D button depth for Scruffy Blue */
+  :root.theme-scruffy-blue button[data-slot="button"],
+  :root.theme-scruffy-blue [data-slot="tabs-trigger"].appointment-view-mode-toggle,
+  #spark-app.theme-scruffy-blue button[data-slot="button"],
+  #spark-app.theme-scruffy-blue [data-slot="tabs-trigger"].appointment-view-mode-toggle {
+    box-shadow:
+      0 3px 10px oklch(0.12 0.06 250 / 40%),
+      inset 0 1px 0 oklch(1 0 0 / 12%);
+    transform: translateZ(0);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  :root.theme-scruffy-blue button[data-slot="button"]:hover,
+  :root.theme-scruffy-blue [data-slot="tabs-trigger"].appointment-view-mode-toggle:hover,
+  #spark-app.theme-scruffy-blue button[data-slot="button"]:hover,
+  #spark-app.theme-scruffy-blue [data-slot="tabs-trigger"].appointment-view-mode-toggle:hover {
+    transform: translateY(-1px) translateZ(0);
+    box-shadow:
+      0 5px 16px oklch(0.12 0.06 250 / 50%),
+      inset 0 1px 0 oklch(1 0 0 / 15%);
+  }
+
+  :root.theme-scruffy-blue button[data-slot="button"].appointment-view-toggle,
+  :root.theme-scruffy-blue [data-slot="tabs-trigger"].appointment-view-mode-toggle,
+  #spark-app.theme-scruffy-blue button[data-slot="button"].appointment-view-toggle,
+  #spark-app.theme-scruffy-blue [data-slot="tabs-trigger"].appointment-view-mode-toggle {
+    border-color: oklch(0.42 0.06 252 / 70%);
+    background: oklch(0.24 0.04 252 / 75%);
+    color: oklch(0.97 0.01 255);
+  }
+
+  :root.theme-scruffy-blue button[data-slot="button"].appointment-view-toggle:hover,
+  :root.theme-scruffy-blue [data-slot="tabs-trigger"].appointment-view-mode-toggle:hover,
+  #spark-app.theme-scruffy-blue button[data-slot="button"].appointment-view-toggle:hover,
+  #spark-app.theme-scruffy-blue [data-slot="tabs-trigger"].appointment-view-mode-toggle:hover {
+    border-color: oklch(0.58 0.12 255 / 75%);
+    background: oklch(0.28 0.06 252 / 80%);
+  }
+
+  :root.theme-scruffy-blue button[data-slot="button"].appointment-view-toggle[aria-pressed="true"],
+  :root.theme-scruffy-blue [data-slot="tabs-trigger"].appointment-view-mode-toggle[data-state="active"],
+  #spark-app.theme-scruffy-blue button[data-slot="button"].appointment-view-toggle[aria-pressed="true"],
+  #spark-app.theme-scruffy-blue [data-slot="tabs-trigger"].appointment-view-mode-toggle[data-state="active"] {
+    border-color: oklch(0.72 0.15 256 / 78%);
+    background:
+      linear-gradient(180deg, oklch(0.58 0.18 255 / 96%), oklch(0.47 0.17 252 / 98%));
+    color: white;
+    box-shadow:
+      0 10px 24px oklch(0.12 0.06 250 / 55%),
+      0 0 0 1px oklch(0.78 0.1 255 / 15%),
+      inset 0 1px 0 oklch(1 0 0 / 18%);
+  }
+
+  :root.theme-scruffy-blue button[data-slot="button"]:active,
+  #spark-app.theme-scruffy-blue button[data-slot="button"]:active {
+    transform: translateY(1px) translateZ(0);
+    box-shadow:
+      0 1px 4px oklch(0.12 0.06 250 / 30%),
+      inset 0 2px 4px oklch(0 0 0 / 15%);
+  }
+
+  /* 3D sidebar depth for Scruffy Blue */
+  :root.theme-scruffy-blue [data-slot="sidebar"],
+  #spark-app.theme-scruffy-blue [data-slot="sidebar"] {
+    box-shadow:
+      4px 0 24px oklch(0.08 0.06 250 / 50%),
+      inset -1px 0 0 oklch(1 0 0 / 6%);
+  }
+
+  /* 3D input depth for Scruffy Blue */
+  :root.theme-scruffy-blue input,
+  :root.theme-scruffy-blue select,
+  :root.theme-scruffy-blue textarea,
+  #spark-app.theme-scruffy-blue input,
+  #spark-app.theme-scruffy-blue select,
+  #spark-app.theme-scruffy-blue textarea {
+    box-shadow:
+      inset 0 2px 4px oklch(0 0 0 / 15%),
+      0 1px 0 oklch(1 0 0 / 5%);
+  }
+
+  /* 3D table row depth for Scruffy Blue */
+  :root.theme-scruffy-blue tr:hover,
+  #spark-app.theme-scruffy-blue tr:hover {
+    box-shadow: 0 2px 8px oklch(0.12 0.06 250 / 25%);
+  }
+
+  /* 3D dialog/popover depth for Scruffy Blue */
+  :root.theme-scruffy-blue [data-slot="dialog-content"],
+  :root.theme-scruffy-blue [data-slot="popover-content"],
+  :root.theme-scruffy-blue [data-slot="dropdown-menu-content"],
+  :root.theme-scruffy-blue [data-slot="sheet-content"],
+  #spark-app.theme-scruffy-blue [data-slot="dialog-content"],
+  #spark-app.theme-scruffy-blue [data-slot="popover-content"],
+  #spark-app.theme-scruffy-blue [data-slot="dropdown-menu-content"],
+  #spark-app.theme-scruffy-blue [data-slot="sheet-content"] {
+    box-shadow:
+      0 12px 48px oklch(0.08 0.06 250 / 60%),
+      0 4px 16px oklch(0.08 0.06 250 / 40%),
+      inset 0 1px 0 oklch(1 0 0 / 10%);
+  }
+
+  :root.ui-compact,
+  #spark-app.ui-compact {
+    --size-scale: 0.92;
+    --radius-factor: 0.95;
+  }
+
+  :root.ui-focus,
+  #spark-app.ui-focus {
+    --size-scale: 1.08;
+    --radius-factor: 1.1;
+  }
+
+  :root.ui-comfort,
+  #spark-app.ui-comfort {
+    --size-scale: 1.04;
+    --radius-factor: 1.2;
+  }
+}
+
+@layer utilities {
+  :root.theme-sweet-blue,
+  #spark-app.theme-sweet-blue {
+    --sweet-blue-shadow-sm:
+      0 12px 24px rgba(59, 130, 246, 0.14),
+      0 4px 10px rgba(15, 23, 42, 0.08);
+    --sweet-blue-shadow-md:
+      0 24px 44px rgba(59, 130, 246, 0.18),
+      0 10px 24px rgba(15, 23, 42, 0.1);
+    --sweet-blue-shadow-lg:
+      0 34px 60px rgba(59, 130, 246, 0.2),
+      0 16px 30px rgba(15, 23, 42, 0.12);
+    --sweet-blue-shadow-inset:
+      inset 0 1px 0 rgba(255, 255, 255, 0.96),
+      inset 0 -2px 0 rgba(96, 165, 250, 0.12);
+    --sweet-blue-panel:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.99) 0%, rgba(239, 246, 255, 0.95) 56%, rgba(219, 234, 254, 0.92) 100%);
+    --sweet-blue-control:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(219, 234, 254, 0.92) 100%);
+    --sweet-blue-border: rgba(96, 165, 250, 0.28);
+    --sweet-blue-panel-edge: rgba(255, 255, 255, 0.72);
+    --sweet-blue-panel-deep: rgba(147, 197, 253, 0.2);
+    --sweet-blue-specular: rgba(255, 255, 255, 0.64);
+    --sweet-blue-floor-glow: rgba(96, 165, 250, 0.16);
+    --sweet-blue-active-surface:
+      linear-gradient(180deg, rgba(224, 242, 254, 0.98) 0%, rgba(186, 230, 253, 0.92) 100%);
+    --sweet-blue-active-border: rgba(56, 189, 248, 0.46);
+    --sweet-blue-active-foreground: rgba(15, 23, 42, 0.94);
+  }
+
+  :root.theme-sweet-blue body,
+  #spark-app.theme-sweet-blue {
+    background-image:
+      radial-gradient(circle at top left, rgba(125, 211, 252, 0.28), transparent 34%),
+      radial-gradient(circle at top right, rgba(96, 165, 250, 0.22), transparent 40%),
+      linear-gradient(180deg, rgba(248, 252, 255, 1) 0%, rgba(239, 246, 255, 1) 100%);
+    background-attachment: fixed;
+  }
+
+  :root.theme-sweet-blue [data-slot="card"],
+  :root.theme-sweet-blue [data-slot="dialog-content"],
+  :root.theme-sweet-blue [data-slot="sheet-content"],
+  :root.theme-sweet-blue [data-slot="drawer-content"],
+  :root.theme-sweet-blue [data-slot="popover-content"],
+  :root.theme-sweet-blue [data-slot="hover-card-content"],
+  :root.theme-sweet-blue [data-slot="select-content"],
+  :root.theme-sweet-blue [data-slot="dropdown-menu-content"],
+  :root.theme-sweet-blue [data-slot="context-menu-content"],
+  :root.theme-sweet-blue [data-slot="menubar-content"],
+  :root.theme-sweet-blue [data-slot="sidebar-inset"],
+  #spark-app.theme-sweet-blue [data-slot="card"],
+  #spark-app.theme-sweet-blue [data-slot="dialog-content"],
+  #spark-app.theme-sweet-blue [data-slot="sheet-content"],
+  #spark-app.theme-sweet-blue [data-slot="drawer-content"],
+  #spark-app.theme-sweet-blue [data-slot="popover-content"],
+  #spark-app.theme-sweet-blue [data-slot="hover-card-content"],
+  #spark-app.theme-sweet-blue [data-slot="select-content"],
+  #spark-app.theme-sweet-blue [data-slot="dropdown-menu-content"],
+  #spark-app.theme-sweet-blue [data-slot="context-menu-content"],
+  #spark-app.theme-sweet-blue [data-slot="menubar-content"],
+  #spark-app.theme-sweet-blue [data-slot="sidebar-inset"] {
+    background: var(--sweet-blue-panel);
+    border-color: var(--sweet-blue-border);
+    box-shadow: var(--sweet-blue-shadow-md), var(--sweet-blue-shadow-inset);
+    backdrop-filter: blur(18px);
+    position: relative;
+  }
+
+  :root.theme-sweet-blue [data-slot="button"]:not([class*="underline-offset"]),
+  :root.theme-sweet-blue [data-slot="input"],
+  :root.theme-sweet-blue [data-slot="textarea"],
+  :root.theme-sweet-blue [data-slot="select-trigger"],
+  :root.theme-sweet-blue [data-slot="tabs-list"],
+  :root.theme-sweet-blue [data-slot="tabs-trigger"],
+  :root.theme-sweet-blue [data-slot="checkbox"],
+  :root.theme-sweet-blue [data-slot="radio-group-item"],
+  :root.theme-sweet-blue [data-slot="switch"],
+  :root.theme-sweet-blue [data-slot="toggle"],
+  :root.theme-sweet-blue [data-slot="toggle-group-item"],
+  :root.theme-sweet-blue [data-slot="sidebar-menu-button"],
+  :root.theme-sweet-blue [data-slot="sidebar-input"],
+  #spark-app.theme-sweet-blue [data-slot="button"]:not([class*="underline-offset"]),
+  #spark-app.theme-sweet-blue [data-slot="input"],
+  #spark-app.theme-sweet-blue [data-slot="textarea"],
+  #spark-app.theme-sweet-blue [data-slot="select-trigger"],
+  #spark-app.theme-sweet-blue [data-slot="tabs-list"],
+  #spark-app.theme-sweet-blue [data-slot="tabs-trigger"],
+  #spark-app.theme-sweet-blue [data-slot="checkbox"],
+  #spark-app.theme-sweet-blue [data-slot="radio-group-item"],
+  #spark-app.theme-sweet-blue [data-slot="switch"],
+  #spark-app.theme-sweet-blue [data-slot="toggle"],
+  #spark-app.theme-sweet-blue [data-slot="toggle-group-item"],
+  #spark-app.theme-sweet-blue [data-slot="sidebar-menu-button"],
+  #spark-app.theme-sweet-blue [data-slot="sidebar-input"] {
+    border-color: var(--sweet-blue-border);
+    background: var(--sweet-blue-control);
+    box-shadow: var(--sweet-blue-shadow-sm), var(--sweet-blue-shadow-inset);
+  }
+
+  :root.theme-sweet-blue [data-slot="button"]:not([class*="underline-offset"]),
+  :root.theme-sweet-blue [data-slot="tabs-trigger"],
+  :root.theme-sweet-blue [data-slot="toggle"],
+  :root.theme-sweet-blue [data-slot="toggle-group-item"],
+  :root.theme-sweet-blue [data-slot="sidebar-menu-button"],
+  #spark-app.theme-sweet-blue [data-slot="button"]:not([class*="underline-offset"]),
+  #spark-app.theme-sweet-blue [data-slot="tabs-trigger"],
+  #spark-app.theme-sweet-blue [data-slot="toggle"],
+  #spark-app.theme-sweet-blue [data-slot="toggle-group-item"],
+  #spark-app.theme-sweet-blue [data-slot="sidebar-menu-button"] {
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease,
+      border-color 180ms ease,
+      background-color 180ms ease;
+  }
+
+  :root.theme-sweet-blue [data-slot="button"]:not([class*="underline-offset"]):hover,
+  :root.theme-sweet-blue [data-slot="tabs-trigger"]:hover,
+  :root.theme-sweet-blue [data-slot="toggle"]:hover,
+  :root.theme-sweet-blue [data-slot="toggle-group-item"]:hover,
+  :root.theme-sweet-blue [data-slot="sidebar-menu-button"]:hover,
+  #spark-app.theme-sweet-blue [data-slot="button"]:not([class*="underline-offset"]):hover,
+  #spark-app.theme-sweet-blue [data-slot="tabs-trigger"]:hover,
+  #spark-app.theme-sweet-blue [data-slot="toggle"]:hover,
+  #spark-app.theme-sweet-blue [data-slot="toggle-group-item"]:hover,
+  #spark-app.theme-sweet-blue [data-slot="sidebar-menu-button"]:hover {
+    transform: translateY(-1px);
+    box-shadow:
+      0 24px 38px rgba(59, 130, 246, 0.2),
+      0 10px 20px rgba(15, 23, 42, 0.12),
+      var(--sweet-blue-shadow-inset);
+  }
+
+  :root.theme-sweet-blue [data-slot="tabs-trigger"][data-state="active"],
+  :root.theme-sweet-blue [data-slot="radio-group-item"][data-state="checked"],
+  :root.theme-sweet-blue [data-slot="checkbox"][data-state="checked"],
+  :root.theme-sweet-blue [data-slot="switch"][data-state="checked"],
+  #spark-app.theme-sweet-blue [data-slot="tabs-trigger"][data-state="active"],
+  #spark-app.theme-sweet-blue [data-slot="radio-group-item"][data-state="checked"],
+  #spark-app.theme-sweet-blue [data-slot="checkbox"][data-state="checked"],
+  #spark-app.theme-sweet-blue [data-slot="switch"][data-state="checked"] {
+    background: var(--sweet-blue-active-surface);
+    border-color: var(--sweet-blue-active-border);
+    color: var(--sweet-blue-active-foreground);
+    box-shadow:
+      0 14px 24px rgba(59, 130, 246, 0.18),
+      0 4px 10px rgba(15, 23, 42, 0.1),
+      var(--sweet-blue-shadow-inset);
+  }
+
+  :root.theme-sweet-blue [data-slot="button"][class*="bg-primary"],
+  #spark-app.theme-sweet-blue [data-slot="button"][class*="bg-primary"] {
+    background: var(--sweet-blue-active-surface);
+    border-color: var(--sweet-blue-active-border);
+    color: var(--sweet-blue-active-foreground);
+    box-shadow:
+      0 16px 28px rgba(56, 189, 248, 0.18),
+      0 6px 14px rgba(15, 23, 42, 0.1),
+      var(--sweet-blue-shadow-inset);
+  }
+
+  :root.theme-sweet-blue [data-slot="button"][class*="bg-primary"]:hover,
+  #spark-app.theme-sweet-blue [data-slot="button"][class*="bg-primary"]:hover {
+    background: linear-gradient(180deg, rgba(240, 249, 255, 0.98) 0%, rgba(186, 230, 253, 0.96) 100%);
+    color: rgba(15, 23, 42, 0.98);
+  }
+
+  :root.theme-sweet-blue [data-testid="page-dashboard"],
+  #spark-app.theme-sweet-blue [data-testid="page-dashboard"] {
+    perspective: 1800px;
+  }
+
+  :root.theme-sweet-blue .dashboard-panel,
+  #spark-app.theme-sweet-blue .dashboard-panel {
+    background: var(--sweet-blue-panel);
+    border-color: rgba(96, 165, 250, 0.32);
+    box-shadow: var(--sweet-blue-shadow-lg), var(--sweet-blue-shadow-inset);
+    transform: translateZ(0);
+    transform-style: preserve-3d;
+    transition:
+      transform 220ms ease,
+      box-shadow 220ms ease,
+      border-color 220ms ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  :root.theme-sweet-blue .dashboard-panel::before,
+  #spark-app.theme-sweet-blue .dashboard-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.08) 34%, transparent 70%),
+      radial-gradient(circle at top left, rgba(191, 219, 254, 0.4), transparent 42%);
+    opacity: 0.88;
+  }
+
+  :root.theme-sweet-blue .dashboard-panel::after,
+  #spark-app.theme-sweet-blue .dashboard-panel::after {
+    content: '';
+    position: absolute;
+    inset: auto 10% -24% 10%;
+    height: 46%;
+    border-radius: 999px;
+    pointer-events: none;
+    background: radial-gradient(circle, var(--sweet-blue-floor-glow) 0%, rgba(96, 165, 250, 0) 72%);
+    filter: blur(24px);
+    opacity: 0.7;
+  }
+
+  :root.theme-sweet-blue .dashboard-panel > *,
+  #spark-app.theme-sweet-blue .dashboard-panel > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  :root.theme-sweet-blue .dashboard-panel:hover,
+  #spark-app.theme-sweet-blue .dashboard-panel:hover {
+    transform: translateY(-3px) translateZ(14px);
+    box-shadow:
+      0 40px 68px rgba(59, 130, 246, 0.22),
+      0 18px 34px rgba(15, 23, 42, 0.14),
+      var(--sweet-blue-shadow-inset);
+  }
+
+  :root.theme-sweet-blue .dashboard-inset,
+  :root.theme-sweet-blue .dashboard-stat-tile,
+  :root.theme-sweet-blue .dashboard-list-item,
+  :root.theme-sweet-blue .dashboard-metric-row,
+  :root.theme-sweet-blue .dashboard-activity-item,
+  :root.theme-sweet-blue .dashboard-gauge-core,
+  #spark-app.theme-sweet-blue .dashboard-inset,
+  #spark-app.theme-sweet-blue .dashboard-stat-tile,
+  #spark-app.theme-sweet-blue .dashboard-list-item,
+  #spark-app.theme-sweet-blue .dashboard-metric-row,
+  #spark-app.theme-sweet-blue .dashboard-activity-item,
+  #spark-app.theme-sweet-blue .dashboard-gauge-core {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(219, 234, 254, 0.78) 100%);
+    border-color: rgba(96, 165, 250, 0.24);
+    box-shadow:
+      0 16px 26px rgba(96, 165, 250, 0.12),
+      0 6px 14px rgba(15, 23, 42, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.86),
+      inset 0 -1px 0 rgba(147, 197, 253, 0.14);
+    transform: translateZ(0);
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease,
+      border-color 180ms ease;
+    position: relative;
+    isolation: isolate;
+  }
+
+  :root.theme-sweet-blue .dashboard-stat-tile,
+  :root.theme-sweet-blue .dashboard-list-item,
+  :root.theme-sweet-blue .dashboard-metric-row,
+  :root.theme-sweet-blue .dashboard-activity-item,
+  #spark-app.theme-sweet-blue .dashboard-stat-tile,
+  #spark-app.theme-sweet-blue .dashboard-list-item,
+  #spark-app.theme-sweet-blue .dashboard-metric-row,
+  #spark-app.theme-sweet-blue .dashboard-activity-item {
+    transform-style: preserve-3d;
+  }
+
+  :root.theme-sweet-blue .dashboard-inset::before,
+  :root.theme-sweet-blue .dashboard-stat-tile::before,
+  :root.theme-sweet-blue .dashboard-list-item::before,
+  :root.theme-sweet-blue .dashboard-metric-row::before,
+  :root.theme-sweet-blue .dashboard-activity-item::before,
+  :root.theme-sweet-blue .dashboard-gauge-core::before,
+  #spark-app.theme-sweet-blue .dashboard-inset::before,
+  #spark-app.theme-sweet-blue .dashboard-stat-tile::before,
+  #spark-app.theme-sweet-blue .dashboard-list-item::before,
+  #spark-app.theme-sweet-blue .dashboard-metric-row::before,
+  #spark-app.theme-sweet-blue .dashboard-activity-item::before,
+  #spark-app.theme-sweet-blue .dashboard-gauge-core::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, var(--sweet-blue-specular), rgba(255, 255, 255, 0.1) 38%, transparent 76%),
+      radial-gradient(circle at top left, rgba(191, 219, 254, 0.28), transparent 48%);
+    opacity: 0.72;
+  }
+
+  :root.theme-sweet-blue .dashboard-inset > *,
+  :root.theme-sweet-blue .dashboard-stat-tile > *,
+  :root.theme-sweet-blue .dashboard-list-item > *,
+  :root.theme-sweet-blue .dashboard-metric-row > *,
+  :root.theme-sweet-blue .dashboard-activity-item > *,
+  :root.theme-sweet-blue .dashboard-gauge-core > *,
+  #spark-app.theme-sweet-blue .dashboard-inset > *,
+  #spark-app.theme-sweet-blue .dashboard-stat-tile > *,
+  #spark-app.theme-sweet-blue .dashboard-list-item > *,
+  #spark-app.theme-sweet-blue .dashboard-metric-row > *,
+  #spark-app.theme-sweet-blue .dashboard-activity-item > *,
+  #spark-app.theme-sweet-blue .dashboard-gauge-core > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  :root.theme-sweet-blue .dashboard-stat-tile-compact,
+  :root.theme-sweet-blue .dashboard-list-item-compact,
+  :root.theme-sweet-blue .dashboard-activity-item-compact,
+  #spark-app.theme-sweet-blue .dashboard-stat-tile-compact,
+  #spark-app.theme-sweet-blue .dashboard-list-item-compact,
+  #spark-app.theme-sweet-blue .dashboard-activity-item-compact {
+    box-shadow:
+      0 12px 20px rgba(96, 165, 250, 0.1),
+      0 4px 10px rgba(15, 23, 42, 0.07),
+      inset 0 1px 0 rgba(255, 255, 255, 0.88),
+      inset 0 -1px 0 rgba(147, 197, 253, 0.12);
+  }
+
+  :root.theme-sweet-blue .dashboard-stat-tile:hover,
+  :root.theme-sweet-blue .dashboard-list-item:hover,
+  :root.theme-sweet-blue .dashboard-metric-row:hover,
+  :root.theme-sweet-blue .dashboard-activity-item:hover,
+  #spark-app.theme-sweet-blue .dashboard-stat-tile:hover,
+  #spark-app.theme-sweet-blue .dashboard-list-item:hover,
+  #spark-app.theme-sweet-blue .dashboard-metric-row:hover,
+  #spark-app.theme-sweet-blue .dashboard-activity-item:hover {
+    transform: translateY(-2px) translateZ(10px);
+    box-shadow:
+      0 22px 34px rgba(96, 165, 250, 0.18),
+      0 10px 18px rgba(15, 23, 42, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  }
+
+  :root.theme-sweet-blue .dashboard-progress-track,
+  #spark-app.theme-sweet-blue .dashboard-progress-track {
+    background: linear-gradient(180deg, rgba(191, 219, 254, 0.42) 0%, rgba(147, 197, 253, 0.22) 100%);
+    box-shadow:
+      inset 0 1px 2px rgba(255, 255, 255, 0.7),
+      inset 0 -1px 3px rgba(59, 130, 246, 0.18);
+  }
+
+  :root.theme-sweet-blue .dashboard-gauge-shell,
+  #spark-app.theme-sweet-blue .dashboard-gauge-shell {
+    background:
+      radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 55%),
+      radial-gradient(circle at 50% 100%, rgba(96, 165, 250, 0.12), rgba(96, 165, 250, 0) 60%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.92),
+      inset 0 -10px 18px rgba(96, 165, 250, 0.08);
+  }
+
+  :root.theme-sweet-blue .dashboard-gauge-core,
+  #spark-app.theme-sweet-blue .dashboard-gauge-core {
+    box-shadow:
+      0 20px 36px rgba(96, 165, 250, 0.16),
+      0 8px 18px rgba(15, 23, 42, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.94),
+      inset 0 -1px 0 rgba(147, 197, 253, 0.14);
+  }
+
+  :root.theme-steel-noir,
+  #spark-app.theme-steel-noir {
+    --steel-noir-shadow-sm:
+      0 8px 14px rgba(0, 0, 0, 0.34),
+      0 2px 6px rgba(0, 0, 0, 0.28);
+    --steel-noir-shadow-md:
+      0 18px 30px rgba(0, 0, 0, 0.42),
+      0 6px 12px rgba(0, 0, 0, 0.3);
+    --steel-noir-shadow-lg:
+      0 32px 48px rgba(0, 0, 0, 0.5),
+      0 12px 20px rgba(0, 0, 0, 0.34);
+    --steel-noir-panel:
+      linear-gradient(180deg, rgba(72, 79, 91, 0.9) 0%, rgba(37, 43, 53, 0.95) 42%, rgba(21, 26, 33, 0.98) 100%);
+    --steel-noir-surface:
+      linear-gradient(180deg, rgba(82, 90, 103, 0.5) 0%, rgba(26, 32, 41, 0.82) 100%);
+    --steel-noir-border: rgba(173, 185, 204, 0.22);
+    --steel-noir-border-strong: rgba(186, 199, 220, 0.34);
+    --steel-noir-cyan-glow: rgba(224, 172, 86, 0.34);
+    --steel-noir-control:
+      linear-gradient(180deg, rgba(86, 95, 109, 0.45) 0%, rgba(28, 34, 43, 0.88) 100%);
+    --steel-noir-active:
+      linear-gradient(180deg, rgba(214, 154, 66, 0.48) 0%, rgba(121, 74, 25, 0.78) 100%);
+  }
+
+  :root.theme-steel-noir body,
+  #spark-app.theme-steel-noir {
+    background-image:
+      radial-gradient(circle at 12% 6%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
+      radial-gradient(circle at 84% 0%, rgba(190, 146, 76, 0.16) 0%, transparent 36%),
+      linear-gradient(180deg, #323942 0%, #1a1f27 42%, #0f1319 100%);
+    background-attachment: fixed;
+  }
+
+  :root.theme-steel-noir [data-slot="card"],
+  :root.theme-steel-noir [data-slot="dialog-content"],
+  :root.theme-steel-noir [data-slot="sheet-content"],
+  :root.theme-steel-noir [data-slot="drawer-content"],
+  :root.theme-steel-noir [data-slot="popover-content"],
+  :root.theme-steel-noir [data-slot="hover-card-content"],
+  :root.theme-steel-noir [data-slot="select-content"],
+  :root.theme-steel-noir [data-slot="dropdown-menu-content"],
+  :root.theme-steel-noir [data-slot="context-menu-content"],
+  :root.theme-steel-noir [data-slot="menubar-content"],
+  :root.theme-steel-noir [data-slot="sidebar-inset"],
+  #spark-app.theme-steel-noir [data-slot="card"],
+  #spark-app.theme-steel-noir [data-slot="dialog-content"],
+  #spark-app.theme-steel-noir [data-slot="sheet-content"],
+  #spark-app.theme-steel-noir [data-slot="drawer-content"],
+  #spark-app.theme-steel-noir [data-slot="popover-content"],
+  #spark-app.theme-steel-noir [data-slot="hover-card-content"],
+  #spark-app.theme-steel-noir [data-slot="select-content"],
+  #spark-app.theme-steel-noir [data-slot="dropdown-menu-content"],
+  #spark-app.theme-steel-noir [data-slot="context-menu-content"],
+  #spark-app.theme-steel-noir [data-slot="menubar-content"],
+  #spark-app.theme-steel-noir [data-slot="sidebar-inset"] {
+    background: var(--steel-noir-panel);
+    border-color: var(--steel-noir-border-strong);
+    box-shadow: var(--steel-noir-shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.24);
+  }
+
+  :root.theme-steel-noir [data-slot="button"]:not([class*="underline-offset"]),
+  :root.theme-steel-noir [data-slot="input"],
+  :root.theme-steel-noir [data-slot="textarea"],
+  :root.theme-steel-noir [data-slot="select-trigger"],
+  :root.theme-steel-noir [data-slot="tabs-list"],
+  :root.theme-steel-noir [data-slot="tabs-trigger"],
+  :root.theme-steel-noir [data-slot="checkbox"],
+  :root.theme-steel-noir [data-slot="radio-group-item"],
+  :root.theme-steel-noir [data-slot="switch"],
+  :root.theme-steel-noir [data-slot="toggle"],
+  :root.theme-steel-noir [data-slot="toggle-group-item"],
+  :root.theme-steel-noir [data-slot="sidebar-menu-button"],
+  :root.theme-steel-noir [data-slot="sidebar-input"],
+  #spark-app.theme-steel-noir [data-slot="button"]:not([class*="underline-offset"]),
+  #spark-app.theme-steel-noir [data-slot="input"],
+  #spark-app.theme-steel-noir [data-slot="textarea"],
+  #spark-app.theme-steel-noir [data-slot="select-trigger"],
+  #spark-app.theme-steel-noir [data-slot="tabs-list"],
+  #spark-app.theme-steel-noir [data-slot="tabs-trigger"],
+  #spark-app.theme-steel-noir [data-slot="checkbox"],
+  #spark-app.theme-steel-noir [data-slot="radio-group-item"],
+  #spark-app.theme-steel-noir [data-slot="switch"],
+  #spark-app.theme-steel-noir [data-slot="toggle"],
+  #spark-app.theme-steel-noir [data-slot="toggle-group-item"],
+  #spark-app.theme-steel-noir [data-slot="sidebar-menu-button"],
+  #spark-app.theme-steel-noir [data-slot="sidebar-input"] {
+    background: var(--steel-noir-control);
+    border-color: var(--steel-noir-border);
+    box-shadow:
+      0 6px 10px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.16),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.45);
+  }
+
+  :root.theme-steel-noir [data-slot="tabs-trigger"][data-state="active"],
+  :root.theme-steel-noir [data-slot="radio-group-item"][data-state="checked"],
+  :root.theme-steel-noir [data-slot="checkbox"][data-state="checked"],
+  :root.theme-steel-noir [data-slot="switch"][data-state="checked"],
+  :root.theme-steel-noir [data-slot="button"][class*="bg-primary"],
+  #spark-app.theme-steel-noir [data-slot="tabs-trigger"][data-state="active"],
+  #spark-app.theme-steel-noir [data-slot="radio-group-item"][data-state="checked"],
+  #spark-app.theme-steel-noir [data-slot="checkbox"][data-state="checked"],
+  #spark-app.theme-steel-noir [data-slot="switch"][data-state="checked"],
+  #spark-app.theme-steel-noir [data-slot="button"][class*="bg-primary"] {
+    background: var(--steel-noir-active);
+    border-color: rgba(226, 171, 84, 0.62);
+    color: #fff5e2;
+    box-shadow:
+      0 10px 16px rgba(0, 0, 0, 0.34),
+      0 0 16px rgba(226, 171, 84, 0.24),
+      inset 0 1px 0 rgba(255, 236, 195, 0.35);
+  }
+
+  :root.theme-steel-noir tr:hover,
+  #spark-app.theme-steel-noir tr:hover {
+    background: rgba(196, 144, 69, 0.12);
+  }
+
+  :root.theme-steel-noir .top-nav-shell-steel-noir,
+  #spark-app.theme-steel-noir .top-nav-shell-steel-noir {
+    background: linear-gradient(180deg, rgba(70, 77, 89, 0.94) 0%, rgba(28, 34, 43, 0.98) 100%);
+    border-bottom-color: rgba(183, 154, 108, 0.35);
+    box-shadow:
+      0 10px 20px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 242, 216, 0.18);
+  }
+
+  :root.theme-steel-noir .top-nav-link,
+  #spark-app.theme-steel-noir .top-nav-link {
+    color: rgba(214, 221, 231, 0.82);
+  }
+
+  :root.theme-steel-noir .top-nav-link:hover,
+  #spark-app.theme-steel-noir .top-nav-link:hover {
+    color: #f4d2a0;
+    border-color: rgba(221, 166, 81, 0.5);
+  }
+
+  :root.theme-steel-noir .top-nav-link-active,
+  #spark-app.theme-steel-noir .top-nav-link-active {
+    color: #ffdca8;
+    border-color: rgba(226, 171, 84, 0.85);
+    text-shadow: 0 0 14px rgba(212, 150, 53, 0.28);
+  }
+
+  :root.theme-steel-noir [data-testid="page-dashboard"],
+  #spark-app.theme-steel-noir [data-testid="page-dashboard"] {
+    perspective: 1800px;
+  }
+
+  :root.theme-steel-noir .dashboard-panel,
+  #spark-app.theme-steel-noir .dashboard-panel {
+    background: var(--steel-noir-panel);
+    border-color: var(--steel-noir-border-strong);
+    box-shadow:
+      var(--steel-noir-shadow-lg),
+      inset 0 1px 0 rgba(255, 255, 255, 0.26),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.55);
+  }
+
+  :root.theme-steel-noir .dashboard-inset,
+  :root.theme-steel-noir .dashboard-stat-tile,
+  :root.theme-steel-noir .dashboard-list-item,
+  :root.theme-steel-noir .dashboard-metric-row,
+  :root.theme-steel-noir .dashboard-activity-item,
+  :root.theme-steel-noir .dashboard-gauge-core,
+  #spark-app.theme-steel-noir .dashboard-inset,
+  #spark-app.theme-steel-noir .dashboard-stat-tile,
+  #spark-app.theme-steel-noir .dashboard-list-item,
+  #spark-app.theme-steel-noir .dashboard-metric-row,
+  #spark-app.theme-steel-noir .dashboard-activity-item,
+  #spark-app.theme-steel-noir .dashboard-gauge-core {
+    background: var(--steel-noir-surface);
+    border-color: rgba(175, 188, 206, 0.24);
+    box-shadow:
+      var(--steel-noir-shadow-sm),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.52);
+  }
+
+  :root.theme-steel-noir .dashboard-progress-track,
+  #spark-app.theme-steel-noir .dashboard-progress-track {
+    background: linear-gradient(180deg, rgba(86, 98, 114, 0.62) 0%, rgba(31, 39, 49, 0.9) 100%);
+    box-shadow:
+      inset 0 1px 2px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(145, 158, 177, 0.18);
+  }
+
+  :root.theme-steel-noir .dashboard-progress-track > div,
+  #spark-app.theme-steel-noir .dashboard-progress-track > div {
+    box-shadow:
+      0 0 14px var(--steel-noir-cyan-glow),
+      inset 0 1px 0 rgba(255, 233, 193, 0.55);
+  }
+
+  :root.theme-steel-noir .dashboard-gauge-core,
+  #spark-app.theme-steel-noir .dashboard-gauge-core {
+    backdrop-filter: blur(1px);
+  }
+
+  :root.theme-blue-steel,
+  #spark-app.theme-blue-steel {
+    --blue-steel-shadow-sm: var(--steel-noir-shadow-sm);
+    --blue-steel-shadow-md: var(--steel-noir-shadow-md);
+    --blue-steel-shadow-lg: var(--steel-noir-shadow-lg);
+    --blue-steel-panel: var(--steel-noir-panel);
+    --blue-steel-surface: var(--steel-noir-surface);
+    --blue-steel-border: rgba(173, 185, 204, 0.22);
+    --blue-steel-border-strong: rgba(186, 199, 220, 0.34);
+    --blue-steel-glow: rgba(103, 157, 228, 0.36);
+    --blue-steel-control: linear-gradient(180deg, rgba(86, 95, 109, 0.45) 0%, rgba(28, 34, 43, 0.88) 100%);
+    --blue-steel-active: linear-gradient(180deg, rgba(87, 139, 214, 0.5) 0%, rgba(35, 72, 138, 0.8) 100%);
+  }
+
+  :root.theme-blue-steel body,
+  #spark-app.theme-blue-steel {
+    background-image:
+      radial-gradient(circle at 12% 6%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
+      radial-gradient(circle at 84% 0%, rgba(190, 146, 76, 0.16) 0%, transparent 36%),
+      linear-gradient(180deg, #323942 0%, #1a1f27 42%, #0f1319 100%);
+    background-attachment: fixed;
+  }
+
+  :root.theme-blue-steel [data-slot="card"],
+  :root.theme-blue-steel [data-slot="dialog-content"],
+  :root.theme-blue-steel [data-slot="sheet-content"],
+  :root.theme-blue-steel [data-slot="drawer-content"],
+  :root.theme-blue-steel [data-slot="popover-content"],
+  :root.theme-blue-steel [data-slot="hover-card-content"],
+  :root.theme-blue-steel [data-slot="select-content"],
+  :root.theme-blue-steel [data-slot="dropdown-menu-content"],
+  :root.theme-blue-steel [data-slot="context-menu-content"],
+  :root.theme-blue-steel [data-slot="menubar-content"],
+  :root.theme-blue-steel [data-slot="sidebar-inset"],
+  #spark-app.theme-blue-steel [data-slot="card"],
+  #spark-app.theme-blue-steel [data-slot="dialog-content"],
+  #spark-app.theme-blue-steel [data-slot="sheet-content"],
+  #spark-app.theme-blue-steel [data-slot="drawer-content"],
+  #spark-app.theme-blue-steel [data-slot="popover-content"],
+  #spark-app.theme-blue-steel [data-slot="hover-card-content"],
+  #spark-app.theme-blue-steel [data-slot="select-content"],
+  #spark-app.theme-blue-steel [data-slot="dropdown-menu-content"],
+  #spark-app.theme-blue-steel [data-slot="context-menu-content"],
+  #spark-app.theme-blue-steel [data-slot="menubar-content"],
+  #spark-app.theme-blue-steel [data-slot="sidebar-inset"] { background: var(--blue-steel-panel); border-color: var(--blue-steel-border-strong); box-shadow: var(--blue-steel-shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.24); }
+
+  :root.theme-blue-steel [data-slot="button"]:not([class*="underline-offset"]), :root.theme-blue-steel [data-slot="input"], :root.theme-blue-steel [data-slot="textarea"], :root.theme-blue-steel [data-slot="select-trigger"], :root.theme-blue-steel [data-slot="tabs-list"], :root.theme-blue-steel [data-slot="tabs-trigger"], :root.theme-blue-steel [data-slot="checkbox"], :root.theme-blue-steel [data-slot="radio-group-item"], :root.theme-blue-steel [data-slot="switch"], :root.theme-blue-steel [data-slot="toggle"], :root.theme-blue-steel [data-slot="toggle-group-item"], :root.theme-blue-steel [data-slot="sidebar-menu-button"], :root.theme-blue-steel [data-slot="sidebar-input"], #spark-app.theme-blue-steel [data-slot="button"]:not([class*="underline-offset"]), #spark-app.theme-blue-steel [data-slot="input"], #spark-app.theme-blue-steel [data-slot="textarea"], #spark-app.theme-blue-steel [data-slot="select-trigger"], #spark-app.theme-blue-steel [data-slot="tabs-list"], #spark-app.theme-blue-steel [data-slot="tabs-trigger"], #spark-app.theme-blue-steel [data-slot="checkbox"], #spark-app.theme-blue-steel [data-slot="radio-group-item"], #spark-app.theme-blue-steel [data-slot="switch"], #spark-app.theme-blue-steel [data-slot="toggle"], #spark-app.theme-blue-steel [data-slot="toggle-group-item"], #spark-app.theme-blue-steel [data-slot="sidebar-menu-button"], #spark-app.theme-blue-steel [data-slot="sidebar-input"] { background: var(--blue-steel-control); border-color: var(--blue-steel-border); box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.16), inset 0 -1px 0 rgba(0, 0, 0, 0.45); }
+
+  :root.theme-blue-steel [data-slot="tabs-trigger"][data-state="active"], :root.theme-blue-steel [data-slot="radio-group-item"][data-state="checked"], :root.theme-blue-steel [data-slot="checkbox"][data-state="checked"], :root.theme-blue-steel [data-slot="switch"][data-state="checked"], :root.theme-blue-steel [data-slot="button"][class*="bg-primary"], #spark-app.theme-blue-steel [data-slot="tabs-trigger"][data-state="active"], #spark-app.theme-blue-steel [data-slot="radio-group-item"][data-state="checked"], #spark-app.theme-blue-steel [data-slot="checkbox"][data-state="checked"], #spark-app.theme-blue-steel [data-slot="switch"][data-state="checked"], #spark-app.theme-blue-steel [data-slot="button"][class*="bg-primary"] { background: var(--blue-steel-active); border-color: rgba(122, 173, 242, 0.65); color: #eaf4ff; box-shadow: 0 10px 16px rgba(0, 0, 0, 0.34), 0 0 16px rgba(103, 157, 228, 0.26), inset 0 1px 0 rgba(219, 236, 255, 0.38); }
+
+  :root.theme-blue-steel tr:hover, #spark-app.theme-blue-steel tr:hover { background: rgba(196, 144, 69, 0.12); }
+  :root.theme-blue-steel .top-nav-shell-steel-noir, #spark-app.theme-blue-steel .top-nav-shell-steel-noir { background: linear-gradient(180deg, rgba(70, 77, 89, 0.94) 0%, rgba(28, 34, 43, 0.98) 100%); border-bottom-color: rgba(183, 154, 108, 0.35); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 242, 216, 0.18); }
+  :root.theme-blue-steel .top-nav-link, #spark-app.theme-blue-steel .top-nav-link { color: rgba(214, 221, 231, 0.82); }
+  :root.theme-blue-steel .top-nav-link:hover, #spark-app.theme-blue-steel .top-nav-link:hover { color: #f4d2a0; border-color: rgba(221, 166, 81, 0.5); }
+  :root.theme-blue-steel .top-nav-link-active, #spark-app.theme-blue-steel .top-nav-link-active { color: #dcecff; border-color: rgba(122, 173, 242, 0.9); text-shadow: 0 0 14px rgba(105, 157, 228, 0.32); }
+  :root.theme-blue-steel [data-testid="page-dashboard"], #spark-app.theme-blue-steel [data-testid="page-dashboard"] { perspective: 1800px; }
+  :root.theme-blue-steel .dashboard-panel, #spark-app.theme-blue-steel .dashboard-panel { background: var(--blue-steel-panel); border-color: var(--blue-steel-border-strong); box-shadow: var(--blue-steel-shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.26), inset 0 -1px 0 rgba(0, 0, 0, 0.55); }
+  :root.theme-blue-steel .dashboard-inset, :root.theme-blue-steel .dashboard-stat-tile, :root.theme-blue-steel .dashboard-list-item, :root.theme-blue-steel .dashboard-metric-row, :root.theme-blue-steel .dashboard-activity-item, :root.theme-blue-steel .dashboard-gauge-core, #spark-app.theme-blue-steel .dashboard-inset, #spark-app.theme-blue-steel .dashboard-stat-tile, #spark-app.theme-blue-steel .dashboard-list-item, #spark-app.theme-blue-steel .dashboard-metric-row, #spark-app.theme-blue-steel .dashboard-activity-item, #spark-app.theme-blue-steel .dashboard-gauge-core { background: var(--blue-steel-surface); border-color: rgba(175, 188, 206, 0.24); box-shadow: var(--blue-steel-shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.18), inset 0 -1px 0 rgba(0, 0, 0, 0.52); }
+  :root.theme-blue-steel .dashboard-progress-track, #spark-app.theme-blue-steel .dashboard-progress-track { background: linear-gradient(180deg, rgba(86, 98, 114, 0.62) 0%, rgba(31, 39, 49, 0.9) 100%); box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(145, 158, 177, 0.18); }
+  :root.theme-blue-steel .dashboard-progress-track > div, #spark-app.theme-blue-steel .dashboard-progress-track > div { box-shadow: 0 0 14px var(--blue-steel-glow), inset 0 1px 0 rgba(223, 238, 255, 0.55); }
+  :root.theme-blue-steel .dashboard-gauge-core, #spark-app.theme-blue-steel .dashboard-gauge-core { backdrop-filter: blur(1px); }
+
+  :root:is(.theme-steel-noir, .theme-blue-steel) [data-slot="badge"],
+  #spark-app:is(.theme-steel-noir, .theme-blue-steel) [data-slot="badge"] {
+    background: linear-gradient(180deg, rgba(78, 88, 102, 0.85) 0%, rgba(31, 38, 48, 0.95) 100%);
+    border-color: rgba(178, 190, 209, 0.42);
+    color: #e8eef8;
+    box-shadow:
+      0 4px 10px rgba(0, 0, 0, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  :root.theme-blue-steel [data-slot="badge"][class*="bg-primary"],
+  #spark-app.theme-blue-steel [data-slot="badge"][class*="bg-primary"],
+  :root.theme-blue-steel [data-slot="tabs-trigger"][data-state="active"],
+  #spark-app.theme-blue-steel [data-slot="tabs-trigger"][data-state="active"] {
+    background: var(--blue-steel-active);
+    border-color: rgba(122, 173, 242, 0.65);
+    color: #eaf4ff;
+  }
+
+  :root.theme-steel-noir [data-testid="page-settings"] label[for^="appearance-"],
+  #spark-app.theme-steel-noir [data-testid="page-settings"] label[for^="appearance-"],
+  :root.theme-blue-steel [data-testid="page-settings"] label[for^="appearance-"],
+  #spark-app.theme-blue-steel [data-testid="page-settings"] label[for^="appearance-"] {
+    background: var(--steel-noir-surface);
+    border-color: rgba(175, 188, 206, 0.3);
+    box-shadow:
+      0 10px 16px rgba(0, 0, 0, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.16),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.48);
+  }
+
+  :root:is(.theme-steel-noir, .theme-blue-steel) .staff-schedule-theme [data-slot="card"],
+  #spark-app:is(.theme-steel-noir, .theme-blue-steel) .staff-schedule-theme [data-slot="card"],
+  :root:is(.theme-steel-noir, .theme-blue-steel) .staff-payroll-theme [data-slot="card"],
+  #spark-app:is(.theme-steel-noir, .theme-blue-steel) .staff-payroll-theme [data-slot="card"],
+  :root:is(.theme-steel-noir, .theme-blue-steel) .staff-profile-theme [data-slot="card"],
+  #spark-app:is(.theme-steel-noir, .theme-blue-steel) .staff-profile-theme [data-slot="card"] {
+    background: var(--steel-noir-panel);
+    border-color: rgba(175, 188, 206, 0.3);
+    box-shadow:
+      0 14px 22px rgba(0, 0, 0, 0.34),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  :root:is(.theme-steel-noir, .theme-blue-steel) .perf-card,
+  #spark-app:is(.theme-steel-noir, .theme-blue-steel) .perf-card {
+    background: var(--steel-noir-panel);
+    border-color: rgba(175, 188, 206, 0.28);
+    box-shadow:
+      0 12px 22px rgba(0, 0, 0, 0.34),
+      inset 0 1px 0 rgba(255, 255, 255, 0.16),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.48);
+  }
+
+  :root.theme-steel-noir .perf-card-button:hover,
+  #spark-app.theme-steel-noir .perf-card-button:hover {
+    box-shadow: 0 0 0 1px rgba(226, 171, 84, 0.48), 0 0 22px rgba(212, 150, 53, 0.24);
+  }
+
+  :root.theme-blue-steel .perf-card-button:hover,
+  #spark-app.theme-blue-steel .perf-card-button:hover {
+    box-shadow: 0 0 0 1px rgba(122, 173, 242, 0.5), 0 0 22px rgba(103, 157, 228, 0.26);
+  }
+
+  :root:is(.theme-steel-noir, .theme-blue-steel) [data-testid="page-settings"] [data-slot="tabs-list"],
+  #spark-app:is(.theme-steel-noir, .theme-blue-steel) [data-testid="page-settings"] [data-slot="tabs-list"] {
+    background: linear-gradient(180deg, rgba(80, 88, 101, 0.5) 0%, rgba(28, 34, 44, 0.78) 100%);
+    border: 1px solid rgba(175, 188, 206, 0.24);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  }
+
+  :root:is(.theme-steel-noir, .theme-blue-steel) [data-testid="page-settings"] [data-slot="tabs-trigger"],
+  #spark-app:is(.theme-steel-noir, .theme-blue-steel) [data-testid="page-settings"] [data-slot="tabs-trigger"] {
+    border: 1px solid transparent;
+  }
+
+  :root:is(.theme-steel-noir, .theme-blue-steel) [data-testid="page-settings"] [data-slot="tabs-trigger"][data-state="active"],
+  #spark-app:is(.theme-steel-noir, .theme-blue-steel) [data-testid="page-settings"] [data-slot="tabs-trigger"][data-state="active"] {
+    box-shadow:
+      0 8px 14px rgba(0, 0, 0, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  }
+
+  :root:is(.theme-steel-noir, .theme-blue-steel) .staff-schedule-theme .grid.grid-cols-7.gap-px > button,
+  :root:is(.theme-steel-noir, .theme-blue-steel) .staff-schedule-theme .grid.grid-cols-7.gap-px > div,
+  #spark-app:is(.theme-steel-noir, .theme-blue-steel) .staff-schedule-theme .grid.grid-cols-7.gap-px > button,
+  #spark-app:is(.theme-steel-noir, .theme-blue-steel) .staff-schedule-theme .grid.grid-cols-7.gap-px > div {
+    background: linear-gradient(180deg, rgba(66, 74, 86, 0.45) 0%, rgba(24, 30, 39, 0.92) 100%);
+  }
+
+  :root:is(.theme-steel-noir, .theme-blue-steel) .staff-schedule-theme [class*="bg-muted/40"],
+  #spark-app:is(.theme-steel-noir, .theme-blue-steel) .staff-schedule-theme [class*="bg-muted/40"] {
+    background: linear-gradient(180deg, rgba(84, 93, 108, 0.5) 0%, rgba(33, 40, 50, 0.86) 100%);
+  }
+
+  :root:is(.theme-steel-noir, .theme-blue-steel) .staff-payroll-theme > .grid > [data-slot="card"],
+  #spark-app:is(.theme-steel-noir, .theme-blue-steel) .staff-payroll-theme > .grid > [data-slot="card"] {
+    background: linear-gradient(180deg, rgba(85, 94, 108, 0.55) 0%, rgba(25, 31, 40, 0.92) 100%);
+    border-color: rgba(175, 188, 206, 0.3);
+    box-shadow:
+      0 12px 20px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  }
+
+  :root:is(.theme-steel-noir, .theme-blue-steel) .perf-wrap {
+    --perf-header-bg: rgba(52, 58, 70, 0.9);
+  }
+
+  :root:is(.theme-steel-noir, .theme-blue-steel) [data-testid="page-settings"] [data-slot="card"],
+  #spark-app:is(.theme-steel-noir, .theme-blue-steel) [data-testid="page-settings"] [data-slot="card"] {
+    background: var(--steel-noir-panel);
+    border-color: rgba(175, 188, 206, 0.3);
+    box-shadow:
+      0 14px 24px rgba(0, 0, 0, 0.32),
+      inset 0 1px 0 rgba(255, 255, 255, 0.16),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.46);
+  }
+
+  :root:is(.theme-steel-noir, .theme-blue-steel) [data-testid="page-settings"] [class*="bg-secondary/20"],
+  :root:is(.theme-steel-noir, .theme-blue-steel) [data-testid="page-settings"] [class*="bg-muted/30"],
+  #spark-app:is(.theme-steel-noir, .theme-blue-steel) [data-testid="page-settings"] [class*="bg-secondary/20"],
+  #spark-app:is(.theme-steel-noir, .theme-blue-steel) [data-testid="page-settings"] [class*="bg-muted/30"] {
+    background: linear-gradient(180deg, rgba(86, 95, 109, 0.45) 0%, rgba(28, 34, 43, 0.88) 100%) !important;
+    border-color: rgba(175, 188, 206, 0.28) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  }
+
+  :root:is(.theme-steel-noir, .theme-blue-steel) [data-testid="page-settings"] [data-slot="switch"],
+  #spark-app:is(.theme-steel-noir, .theme-blue-steel) [data-testid="page-settings"] [data-slot="switch"] {
+    border-color: rgba(175, 188, 206, 0.34);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  }
+
+  :root:is(.theme-steel-noir, .theme-blue-steel) .staff-profile-theme button[class*="bg-primary/10"],
+  :root:is(.theme-steel-noir, .theme-blue-steel) .staff-profile-theme [data-slot="button"][class*="bg-primary/10"],
+  #spark-app:is(.theme-steel-noir, .theme-blue-steel) .staff-profile-theme button[class*="bg-primary/10"],
+  #spark-app:is(.theme-steel-noir, .theme-blue-steel) .staff-profile-theme [data-slot="button"][class*="bg-primary/10"] {
+    background: linear-gradient(180deg, rgba(86, 95, 109, 0.45) 0%, rgba(28, 34, 43, 0.88) 100%);
+    border-color: rgba(175, 188, 206, 0.34);
+    color: #e9eef7;
+  }
+
+  :root:is(.theme-steel-noir, .theme-blue-steel) .staff-schedule-theme .h-8.rounded-md.border,
+  #spark-app:is(.theme-steel-noir, .theme-blue-steel) .staff-schedule-theme .h-8.rounded-md.border {
+    background: linear-gradient(180deg, rgba(86, 95, 109, 0.45) 0%, rgba(28, 34, 43, 0.88) 100%);
+    border-color: rgba(175, 188, 206, 0.34);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  }
+}
