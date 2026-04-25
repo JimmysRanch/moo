@@ -1,0 +1,6 @@
+BEGIN;
+
+ALTER TABLE public.pet_photos
+  ALTER COLUMN url DROP NOT NULL;
+
+COMMIT;
