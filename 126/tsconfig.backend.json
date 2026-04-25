@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "strict": false,
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "types": ["node"]
+  },
+  "include": [
+    "api/stripe/**/*.ts",
+    "api/types/**/*.d.ts",
+    "lib/stripe/**/*.ts",
+    "supabase/functions/**/*.ts"
+  ]
+}
