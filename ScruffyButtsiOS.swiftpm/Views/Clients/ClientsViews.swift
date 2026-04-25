@@ -194,7 +194,7 @@ struct AddClientView: View {
                                           createdAt: Date()))
                     dismiss()
                 }
-                .disabled(first.isEmpty && last.isEmpty)
+                .disabled(first.isEmpty)
             }
         }
     }

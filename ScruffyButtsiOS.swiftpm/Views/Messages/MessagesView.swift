@@ -87,7 +87,7 @@ struct MessageThreadView: View {
                                                   sentAt: Date()))
                     draft = ""
                 } label: { Image(systemName: "paperplane.fill") }
-                .disabled(draft.trimmingCharacters(in: .whitespaces).isEmpty)
+                .disabled(draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
             }
             .padding(8)
             .background(.bar)

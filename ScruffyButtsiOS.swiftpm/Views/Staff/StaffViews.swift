@@ -154,7 +154,7 @@ struct CreateStaffMemberView: View {
                         avatarSystemImage: "person.crop.circle.fill"))
                     dismiss()
                 }
-                .disabled(first.isEmpty && last.isEmpty)
+                .disabled(first.isEmpty)
             }
         }
     }
