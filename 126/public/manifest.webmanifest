@@ -1,0 +1,24 @@
+{
+  "name": "Scruffy Butts",
+  "short_name": "Scruffy Butts",
+  "description": "Manage dog grooming appointments, clients, pets, and staff from a fast installable app.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#00193e",
+  "theme_color": "#00193e",
+  "icons": [
+    {
+      "src": "/IMG_4851.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/IMG_4851.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
